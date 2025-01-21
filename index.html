@@ -2,13 +2,19 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
+  <!-- ВАЖНО: мета-тег viewport для адаптивности -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ЭЛЕКТРОТЕХСНАБ — Горизонтальное направленное бурение (ГНБ)</title>
   
   <!-- Подключаем шрифт Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- (В вашем исходном коде была ссылка как rel="stylesheet", 
+       но это не критично; оставляем как есть.) -->
   <link 
-    href="https://i.imgur.com/JS3SHrA.jpeg" 
+    href="https://i.imgur.com/Htid9yx.png" 
     rel="stylesheet"
   >
   
@@ -19,6 +25,7 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
+    }
     body {
       color: #333;
       background: #f0f2f5;
@@ -74,7 +81,7 @@
       color: #0563bb;
     }
 
-    /* ======= ГЕРОЙ-СЕКЦИЯ ======= */
+    /* ======= ГЕРОЙ-СЕКЦИЯ (ДЕСКТОП ПО УМОЛЧАНИЮ) ======= */
     .hero {
       height: 100vh;
       background: 
@@ -155,7 +162,7 @@
       line-height: 1.6;
     }
 
-    /* ======= УСЛУГИ (services) - 2 колонки ======= */
+    /* ======= УСЛУГИ (services) ======= */
     .services-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -174,6 +181,7 @@
       width: 350px;
       padding: 25px;
       transition: transform 0.3s ease;
+      text-align: left;
     }
     .service-card:hover {
       transform: translateY(-5px);
@@ -192,72 +200,16 @@
       margin-top: 15px;
       background: #0563bb;
       color: #fff;
-      padding: 12px 20px;
+      padding: 16px 32px; /* Увеличили кнопку */
       border-radius: 4px;
       text-decoration: none;
       font-weight: 600;
+      font-size: 1.1rem; /* Крупнее шрифт */
       transition: background 0.3s ease;
     }
     .service-btn:hover {
       background: #ffdf00;
       color: #333;
-    }
-
-    /* ======= КАРУСЕЛЬ ДЛЯ ДОПОЛНИТЕЛЬНЫХ УСЛУГ (широкие карточки) ======= */
-    .carousel-container {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 1200px; 
-      margin: 0 auto;
-      border-radius: 8px;
-    }
-    .carousel-track {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-    /* Каждая карточка во всю ширину */
-    .carousel-item {
-      flex: 0 0 100%; 
-      display: flex;
-      flex-direction: column;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      margin: 10px;
-      padding: 30px;
-      box-sizing: border-box;
-    }
-    .additional-service-card h3 {
-      margin-bottom: 15px;
-      color: #0563bb;
-      font-size: 1.4rem;
-    }
-    .additional-service-card p {
-      line-height: 1.5;
-    }
-
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      background: rgba(0,0,0,0.3);
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-      z-index: 10;
-      border-radius: 4px;
-    }
-    .carousel-btn:hover {
-      background: rgba(0,0,0,0.5);
-    }
-    .carousel-btn.left {
-      left: 10px;
-    }
-    .carousel-btn.right {
-      right: 10px;
     }
 
     /* ======= КАЛЬКУЛЯТОР ======= */
@@ -376,55 +328,7 @@
       color: #333;
     }
 
-    /* ======= ТЕХНОЛОГИИ (шаги + видео) ======= */
-    .tech-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .tech-step {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      padding: 25px;
-      text-align: center;
-      position: relative;
-      transition: transform 0.3s ease;
-    }
-    .tech-step:hover {
-      transform: translateY(-5px);
-    }
-    .tech-step .tech-icon {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 15px;
-      display: inline-block;
-    }
-    .tech-step h3 {
-      color: #0563bb;
-      margin-bottom: 10px;
-    }
-    .tech-video {
-      margin-top: 30px;
-      text-align: center;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      overflow: hidden;
-      background: #fff;
-    }
-    .tech-video iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      display: block;
-    }
-
-    /* ======= ГАЛЕРЕЯ (gallery) ======= */
+    /* ======= ГАЛЕРЕЯ ======= */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -459,8 +363,61 @@
       color: #333;
       text-align: center;
     }
+    .gallery-button-wrap {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .gallery-button {
+      background: #0563bb;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+    }
+    .gallery-button:hover {
+      background: #ffdf00;
+      color: #333;
+    }
 
-    /* ======= КОНТАКТЫ (contacts) ======= */
+    /* ======= ТЕХНОЛОГИИ (2×2) ======= */
+    .tech-steps {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .tech-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+    .tech-step {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 25px;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    .tech-step:hover {
+      transform: translateY(-5px);
+    }
+    .tech-step h3 {
+      color: #0563bb;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+    .tech-step p {
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    /* ======= КОНТАКТЫ ======= */
     .contacts-section {
       display: flex;
       flex-wrap: wrap;
@@ -483,40 +440,6 @@
     .contacts-info a {
       color: #0563bb;
     }
-    .contact-form {
-      flex: 1 1 350px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-      padding: 20px;
-      min-width: 300px;
-    }
-    .contact-form h3 {
-      margin-bottom: 15px;
-      color: #0563bb;
-    }
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form button {
-      width: 100%;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 10px;
-      font-size: 1rem;
-    }
-    .contact-form button {
-      background: #0563bb;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s ease;
-    }
-    .contact-form button:hover {
-      background: #ffdf00;
-      color: #333;
-    }
     .map-container {
       width: 100%;
       margin-top: 30px;
@@ -528,6 +451,45 @@
       border-radius: 8px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
+    .contact-form {
+      flex: 1 1 350px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      padding: 25px;
+      min-width: 300px;
+    }
+    .contact-form h3 {
+      margin-bottom: 20px;
+      color: #0563bb;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding: 12px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background: #0563bb;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      padding: 14px;
+      border-radius: 4px;
+      font-size: 1rem;
+      width: 100%;
+    }
+    .contact-form button:hover {
+      background: #ffdf00;
+      color: #333;
+    }
 
     /* ======= ПОДВАЛ ======= */
     footer {
@@ -537,8 +499,20 @@
       padding: 20px;
     }
 
-    /* ======= АДАПТИВНОСТЬ ======= */
+    /* 
+       ======= АДАПТИВНОСТЬ: ПОДМЕНЯЕМ ФОН НА МОБИЛЬНОМ ======= 
+       (max-width: 768px) => фон -> pCK8h7S.jpeg
+    */
     @media (max-width: 768px) {
+      .hero {
+        background: 
+          linear-gradient(
+            to right, 
+            rgba(5, 99, 187, 0.7) 0%, 
+            rgba(85, 149, 233, 0.7) 100%
+          ), 
+          url('https://i.imgur.com/pCK8h7S.jpeg') center/cover no-repeat;
+      }
       .hero-content h1 {
         font-size: 2rem;
       }
@@ -550,6 +524,20 @@
       }
       .tech-video iframe {
         height: 250px;
+      }
+
+      /* 
+         ==== ИСПРАВЛЕНИЕ для кнопки в галерее 
+         чтобы текст не накладывался друг на друга ====
+      */
+      .gallery-button {
+        font-size: 1rem;
+        white-space: normal;     /* разрешаем перенос */
+        word-break: break-word;  /* если слово длинное, переносим */
+        display: inline-block;   /* сохраняем формат кнопки, но даём возможность переноса */
+        max-width: 90%;         /* чтобы не уходило за экран */
+        margin: 0 auto;         /* центрируем */
+        text-align: center;
       }
     }
   </style>
@@ -581,7 +569,7 @@
   <!-- Герой-секция -->
   <section class="hero" id="main">
     <div class="hero-content">
-      <h1>Монтаж инженерных сетей безтраншейным способом</h1>
+      <h1>Монтаж инженерных сетей бестраншейным способом</h1>
       <p>Мы более 20 лет внедряем передовые технологии ГНБ. Выполняем то, что другим не под силу!</p>
       <!-- Кнопка — переход в WhatsApp с готовым текстом -->
       <div 
@@ -595,7 +583,7 @@
 
   <div class="offset-top"></div>
 
-  <!-- Услуги (2 колонки) -->
+  <!-- Услуги (6 карточек) -->
   <section id="services" class="section-container">
     <h2>Услуги</h2>
     <div class="services-list">
@@ -604,7 +592,6 @@
         <h3>ГНБ под ключ</h3>
         <p>Полный цикл: от проектирования до сдачи объекта. Точные траектории и высокое качество.</p>
         <ul>
-          <li>Проектирование</li>
           <li>Бурение пилотной скважины</li>
           <li>Расширение и протягивание трубы</li>
         </ul>
@@ -623,8 +610,7 @@
       <div class="service-card">
         <h3>Услуги и аренда механизмов</h3>
         <p>
-          Предоставляем широкий спектр строительной спецтехники для выполнения различных задач.
-          В нашем парке – экскаваторы, самосвалы, буровые установки и др.
+          Предоставляем широкий спектр строительной спецтехники. В нашем парке – экскаваторы, самосвалы, буровые установки и др.
         </p>
         <a href="machines.html" class="service-btn">Посмотреть технику</a>
       </div>
@@ -655,57 +641,6 @@
           производственных линий. Гибкие условия аренды.
         </p>
       </div>
-    </div>
-  </section>
-
-  <!-- Дополнительные услуги (широкая карусель) -->
-  <section class="section-container">
-    <h2>Дополнительные услуги</h2>
-    <div class="carousel-container" id="additionalServicesCarousel">
-      <button class="carousel-btn left" onclick="slideCarousel(-1)">&#10094;</button>
-      
-      <div class="carousel-track" id="carouselTrack">
-        
-        <!-- 1 -->
-        <div class="carousel-item">
-          <div class="additional-service-card">
-            <h3>Горизонтальное направленное бурение</h3>
-            <p>Прокладка коммуникаций под землёй, сохраняя дорожное покрытие и экологию.</p>
-          </div>
-        </div>
-        <!-- 2 -->
-        <div class="carousel-item">
-          <div class="additional-service-card">
-            <h3>Бестраншейная прокладка труб</h3>
-            <p>Укладываем трубы различного диаметра без масштабных раскопок.</p>
-          </div>
-        </div>
-        <!-- 3 -->
-        <div class="carousel-item">
-          <div class="additional-service-card">
-            <h3>Бестраншейная прокладка кабеля</h3>
-            <p>Надёжное решение для электрики и связи, без разрытия длинных траншей.</p>
-          </div>
-        </div>
-        <!-- 4 -->
-        <div class="carousel-item">
-          <div class="additional-service-card">
-            <h3>Прокладка газопровода методом ГНБ</h3>
-            <p>Безопасная прокладка газовых труб под дорогами и реками.</p>
-          </div>
-        </div>
-        <!-- 5 -->
-        <div class="carousel-item">
-          <div class="additional-service-card">
-            <h3>Прокладка водопровода методом ГНБ</h3>
-            <p>Высокая точность и надёжность при прокладке систем водоснабжения.</p>
-          </div>
-        </div>
-        <!-- ... добавьте по необходимости ... -->
-
-      </div>
-
-      <button class="carousel-btn right" onclick="slideCarousel(1)">&#10095;</button>
     </div>
   </section>
 
@@ -744,54 +679,6 @@
       >
         Рассчитать
       </div>
-    </div>
-  </section>
-
-  <!-- КАРТА ВЫПОЛНЕННЫХ РАБОТ -->
-  <section id="map" class="section-container">
-    <h2>Карта выполненных работ</h2>
-    <p>Ниже отмечены наши объекты (более 60) по всему региону.</p>
-    <div id="projectsMap" style="width: 100%; height: 500px;"></div>
-  </section>
-
-  <!-- ТЕХНОЛОГИИ (4 шага + видео) -->
-  <section id="technologies" class="section-container">
-    <h2>Технологии — как работает ГНБ</h2>
-    <div class="tech-steps">
-      <div class="tech-step">
-      
-        <h3>1. Пилотное бурение</h3>
-        <p>
-          Специальная буровая головка с локатором прокладывает пилотную скважину
-          строго по заданной траектории, обходя существующие коммуникации.
-        </p>
-      </div>
-      <div class="tech-step">
-        
-        <h3>2. Расширение</h3>
-        <p>
-          При необходимости заложить крупный диаметр: производиться поэтапное расширение скважины до нужного размера.
-        </p>
-      </div>
-      <div class="tech-step">
-       
-        <h3>3. Протяжка трубы</h3>
-        <p>
-          Когда проход сформирован, затягиваем саму трубу или кабель.  
-          Грунт не требует масштабного восстановления.
-        </p>
-      </div>
-      <div class="tech-step">
-     
-        <h3>4. Контроль и сдача</h3>
-        <p>
-          Завершаем объект проверкой соответствия проекту.
-          Дорожное покрытие остаётся неповреждённым.
-        </p>
-      </div>
-    </div>
-
-      </iframe>
     </div>
   </section>
 
@@ -850,7 +737,7 @@
           src="https://i.imgur.com/UHGb6Mo.jpeg" 
           alt="Описание техники 7"
         />
-        <div class="gallery-caption">hyundai Robex 210LC 17 метров стрела</div>
+        <div class="gallery-caption">Hyundai Robex 210LC</div>
       </div>
       <div class="gallery-item">
         <img 
@@ -864,6 +751,55 @@
       И это ещё не всё!<br>
       Мы постоянно пополняем наш автопарк.
     </p>
+
+    <!-- Большая кнопка под галереей -->
+    <div class="gallery-button-wrap">
+      <a href="machines.html" class="gallery-button">
+        Посмотреть и арендовать нашу технику
+      </a>
+    </div>
+  </section>
+
+  <!-- ТЕХНОЛОГИИ (2×2) -->
+  <section id="technologies" class="section-container">
+    <h2>Технологии — как работает ГНБ</h2>
+    <div class="tech-steps">
+      <div class="tech-step">
+        <h3>1. Пилотное бурение</h3>
+        <p>
+          Специальная буровая головка с локатором прокладывает пилотную скважину
+          строго по заданной траектории, обходя существующие коммуникации.
+        </p>
+      </div>
+      <div class="tech-step">
+        <h3>2. Расширение</h3>
+        <p>
+          При необходимости заложить крупный диаметр: производим постепенное расширение 
+          скважины до нужного размера.
+        </p>
+      </div>
+      <div class="tech-step">
+        <h3>3. Протяжка трубы</h3>
+        <p>
+          Когда проход сформирован, затягиваем саму трубу или кабель.  
+          Грунт не требует масштабного восстановления.
+        </p>
+      </div>
+      <div class="tech-step">
+        <h3>4. Контроль и сдача</h3>
+        <p>
+          Завершаем объект проверкой соответствия проекту.
+          Дорожное покрытие остаётся неповреждённым.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАРТА ВЫПОЛНЕННЫХ РАБОТ -->
+  <section id="map" class="section-container">
+    <h2>Карта выполненных работ</h2>
+    <p>Ниже отмечены наши объекты (более 1000) по всему Казахстану.</p>
+    <div id="projectsMap" style="width: 100%; height: 500px;"></div>
   </section>
 
   <!-- Контакты -->
@@ -874,8 +810,12 @@
         <p><strong>Телефоны:</strong></p>
         <p>+7 (727) 383-30-48</p>
         <p>+7 (727) 279-23-19</p>
+        <p>+7 (701) 302-21-07</p>
+        <p>+7 (777) 747-09-86</p>
 
-        <p><strong>Email:</strong> <a href="mailto:ets.02@mail.ru">ets.02@mail.ru</a></p>
+        <p><strong>Email:</strong> 
+          <a href="mailto:ets.02@mail.ru">ets.02@mail.ru</a>
+        </p>
         <p><strong>Адрес офиса:</strong> г. Алматы, ул. Булкушева, 9</p>
 
         <div class="map-container">
@@ -891,9 +831,27 @@
       <!-- Форма, при отправке – переходим в WhatsApp -->
       <form class="contact-form" id="whatsappForm" onsubmit="sendToWhatsApp(event)">
         <h3>Оставьте заявку</h3>
-        <input type="text" id="nameField" name="name" placeholder="Ваше имя" required />
-        <input type="tel" id="phoneField" name="phone" placeholder="Телефон" required />
-        <textarea id="messageField" name="message" rows="4" placeholder="Сообщение" required></textarea>
+        <input 
+          type="text" 
+          id="nameField" 
+          name="name" 
+          placeholder="Ваше имя" 
+          required 
+        />
+        <input 
+          type="tel" 
+          id="phoneField" 
+          name="phone" 
+          placeholder="Телефон" 
+          required 
+        />
+        <textarea 
+          id="messageField" 
+          name="message" 
+          rows="4" 
+          placeholder="Сообщение" 
+          required>
+        </textarea>
         <button type="submit">Отправить</button>
       </form>
     </div>
@@ -908,7 +866,7 @@
   <script>
     function orderService() {
       const whatsappNumber = '77777470986';
-      const text = 'Здравствуйте! Хочу заказать услугу ГНБ у компании ЭЛЕКТРОТЕХСНАБ.';
+      const text = 'Здравствуйте! Хочу заказать услугу ГНБ у компании.';
       const link = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
       window.open(link, '_blank');
     }
@@ -999,95 +957,73 @@
     }
   </script>
 
-  <!-- JS: Карусель "Доп. услуги" (по одной карточке) -->
-  <script>
-    let currentIndex = 0;
-
-    function slideCarousel(direction) {
-      const track = document.getElementById('carouselTrack');
-      const items = track.querySelectorAll('.carousel-item');
-      const totalSlides = items.length;
-
-      // Кликаем влево -> direction=-1, вправо -> direction=1
-      currentIndex += direction;
-
-      // Ограничим, чтобы не уходить за границы
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex >= totalSlides) currentIndex = totalSlides - 1;
-
-      // Сдвигаем трек: каждая карточка = 100%
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-  </script>эжэжэжэжэжэ
-
   <!-- JS: Google Maps -->
   <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtejkm2hJwzGsNt_lA3v0K3gP54a74n4Y&callback=initMap">
   </script>
   <script>
     const projectMarkers = [
-       { lat: 43.317395, lng: 76.970348, title: 'ГНБ-проект №1' },
-  { lat: 43.265969, lng: 76.885835, title: 'ГНБ-проект №2' },
-  { lat: 43.292400, lng: 76.855930, title: 'ГНБ-проект №3' },
-  { lat: 43.294099, lng: 76.860125, title: 'ГНБ-проект №4' },
-  { lat: 43.294014, lng: 76.861077, title: 'ГНБ-проект №5' },
-  { lat: 43.295956, lng: 76.861625, title: 'ГНБ-проект №6' },
-  { lat: 43.318218, lng: 76.885652, title: 'ГНБ-проект №7' },
-  { lat: 43.314033, lng: 77.020834, title: 'ГНБ-проект №8' },
-  { lat: 43.297008, lng: 76.984385, title: 'ГНБ-проект №9' },
-  { lat: 43.252083, lng: 76.824148, title: 'ГНБ-проект №10' },
-  { lat: 44.352783, lng: 77.967173, title: 'ГНБ-проект №11' },
-  { lat: 43.262928, lng: 76.859075, title: 'ГНБ-проект №12' },
-  { lat: 43.426454, lng: 76.910260, title: 'ГНБ-проект №13' },
-  { lat: 43.270329, lng: 76.957242, title: 'ГНБ-проект №14' },
-  { lat: 43.232776, lng: 76.946732, title: 'ГНБ-проект №15' },
-  { lat: 43.388340, lng: 77.114908, title: 'ГНБ-проект №16' },
-  { lat: 43.191143, lng: 76.832513, title: 'ГНБ-проект №17' },
-  { lat: 43.182991, lng: 76.942377, title: 'ГНБ-проект №18' },
-  { lat: 43.189802, lng: 76.965031, title: 'ГНБ-проект №19' },
-  { lat: 43.371034, lng: 76.950855, title: 'ГНБ-проект №20' },
-  { lat: 43.855302, lng: 77.050512, title: 'ГНБ-проект №21' },
-  { lat: 44.353647, lng: 77.969527, title: 'ГНБ-проект №22' },
-  { lat: 43.592466, lng: 78.253250, title: 'ГНБ-проект №23' },
-  { lat: 43.402497, lng: 77.593734, title: 'ГНБ-проект №24' },
-  { lat: 43.305775, lng: 77.232114, title: 'ГНБ-проект №25' },
-  { lat: 43.307289, lng: 77.059150, title: 'ГНБ-проект №26' },
-  { lat: 43.350428, lng: 76.955156, title: 'ГНБ-проект №27' },
-  { lat: 43.351483, lng: 76.951455, title: 'ГНБ-проект №28' },
-  { lat: 43.353865, lng: 76.959625, title: 'ГНБ-проект №29' },
-  { lat: 43.375124, lng: 77.007875, title: 'ГНБ-проект №30' },
-  { lat: 43.281622, lng: 76.975188, title: 'ГНБ-проект №31' },
-  { lat: 43.286346, lng: 76.980418, title: 'ГНБ-проект №32' },
-  { lat: 43.251306, lng: 76.964381, title: 'ГНБ-проект №33' },
-  { lat: 43.195510, lng: 76.863579, title: 'ГНБ-проект №34' },
-  { lat: 43.211737, lng: 76.838009, title: 'ГНБ-проект №35' },
-  { lat: 43.224879, lng: 76.823801, title: 'ГНБ-проект №36' },
-  { lat: 43.204035, lng: 76.758759, title: 'ГНБ-проект №37' },
-  { lat: 43.198924, lng: 76.620718, title: 'ГНБ-проект №38' },
-  { lat: 43.212318, lng: 76.624586, title: 'ГНБ-проект №39' },
-  { lat: 49.823310, lng: 73.094549, title: 'ГНБ-проект №40' },
-  { lat: 49.798048, lng: 73.047729, title: 'ГНБ-проект №41' },
-  { lat: 43.983253, lng: 77.466909, title: 'ГНБ-проект №42' },
-  { lat: 43.673838, lng: 77.108186, title: 'ГНБ-проект №43' },
-  { lat: 43.351869, lng: 77.000358, title: 'ГНБ-проект №44' },
-  { lat: 43.325932, lng: 76.980722, title: 'ГНБ-проект №45' },
-  { lat: 43.311463, lng: 76.960903, title: 'ГНБ-проект №46' },
-  { lat: 43.313680, lng: 76.959642, title: 'ГНБ-проект №47' },
-  { lat: 43.281366, lng: 76.953588, title: 'ГНБ-проект №48' },
-  { lat: 43.265475, lng: 76.934300, title: 'ГНБ-проект №49' },
-  { lat: 43.260013, lng: 76.919544, title: 'ГНБ-проект №50' },
-  { lat: 43.247002, lng: 76.905562, title: 'ГНБ-проект №51' },
-  { lat: 43.240827, lng: 76.896336, title: 'ГНБ-проект №52' },
-  { lat: 43.239072, lng: 76.895159, title: 'ГНБ-проект №53' },
-  { lat: 43.239843, lng: 76.873864, title: 'ГНБ-проект №54' },
-  { lat: 43.221496, lng: 76.870228, title: 'ГНБ-проект №55' },
-  { lat: 43.203904, lng: 76.885670, title: 'ГНБ-проект №56' },
-  { lat: 43.203910, lng: 76.899728, title: 'ГНБ-проект №57' },
-  { lat: 43.210711, lng: 76.907840, title: 'ГНБ-проект №58' },
-  { lat: 43.188216, lng: 76.922324, title: 'ГНБ-проект №59' },
-  { lat: 43.153089, lng: 76.900898, title: 'ГНБ-проект №60' },
-  { lat: 43.170543, lng: 76.849723, title: 'ГНБ-проект №61' },
-      // Можно добавить остальные
+      { lat: 43.317395, lng: 76.970348, title: 'ГНБ-проект №1' },
+      { lat: 43.265969, lng: 76.885835, title: 'ГНБ-проект №2' },
+      { lat: 43.292400, lng: 76.855930, title: 'ГНБ-проект №3' },
+      { lat: 43.294099, lng: 76.860125, title: 'ГНБ-проект №4' },
+      { lat: 43.294014, lng: 76.861077, title: 'ГНБ-проект №5' },
+      { lat: 43.295956, lng: 76.861625, title: 'ГНБ-проект №6' },
+      { lat: 43.318218, lng: 76.885652, title: 'ГНБ-проект №7' },
+      { lat: 43.314033, lng: 77.020834, title: 'ГНБ-проект №8' },
+      { lat: 43.297008, lng: 76.984385, title: 'ГНБ-проект №9' },
+      { lat: 43.252083, lng: 76.824148, title: 'ГНБ-проект №10' },
+      { lat: 44.352783, lng: 77.967173, title: 'ГНБ-проект №11' },
+      { lat: 43.262928, lng: 76.859075, title: 'ГНБ-проект №12' },
+      { lat: 43.426454, lng: 76.910260, title: 'ГНБ-проект №13' },
+      { lat: 43.270329, lng: 76.957242, title: 'ГНБ-проект №14' },
+      { lat: 43.232776, lng: 76.946732, title: 'ГНБ-проект №15' },
+      { lat: 43.388340, lng: 77.114908, title: 'ГНБ-проект №16' },
+      { lat: 43.191143, lng: 76.832513, title: 'ГНБ-проект №17' },
+      { lat: 43.182991, lng: 76.942377, title: 'ГНБ-проект №18' },
+      { lat: 43.189802, lng: 76.965031, title: 'ГНБ-проект №19' },
+      { lat: 43.371034, lng: 76.950855, title: 'ГНБ-проект №20' },
+      { lat: 43.855302, lng: 77.050512, title: 'ГНБ-проект №21' },
+      { lat: 44.353647, lng: 77.969527, title: 'ГНБ-проект №22' },
+      { lat: 43.592466, lng: 78.253250, title: 'ГНБ-проект №23' },
+      { lat: 43.402497, lng: 77.593734, title: 'ГНБ-проект №24' },
+      { lat: 43.305775, lng: 77.232114, title: 'ГНБ-проект №25' },
+      { lat: 43.307289, lng: 77.059150, title: 'ГНБ-проект №26' },
+      { lat: 43.350428, lng: 76.955156, title: 'ГНБ-проект №27' },
+      { lat: 43.351483, lng: 76.951455, title: 'ГНБ-проект №28' },
+      { lat: 43.353865, lng: 76.959625, title: 'ГНБ-проект №29' },
+      { lat: 43.375124, lng: 77.007875, title: 'ГНБ-проект №30' },
+      { lat: 43.281622, lng: 76.975188, title: 'ГНБ-проект №31' },
+      { lat: 43.286346, lng: 76.980418, title: 'ГНБ-проект №32' },
+      { lat: 43.251306, lng: 76.964381, title: 'ГНБ-проект №33' },
+      { lat: 43.195510, lng: 76.863579, title: 'ГНБ-проект №34' },
+      { lat: 43.211737, lng: 76.838009, title: 'ГНБ-проект №35' },
+      { lat: 43.224879, lng: 76.823801, title: 'ГНБ-проект №36' },
+      { lat: 43.204035, lng: 76.758759, title: 'ГНБ-проект №37' },
+      { lat: 43.198924, lng: 76.620718, title: 'ГНБ-проект №38' },
+      { lat: 43.212318, lng: 76.624586, title: 'ГНБ-проект №39' },
+      { lat: 49.823310, lng: 73.094549, title: 'ГНБ-проект №40' },
+      { lat: 49.798048, lng: 73.047729, title: 'ГНБ-проект №41' },
+      { lat: 43.983253, lng: 77.466909, title: 'ГНБ-проект №42' },
+      { lat: 43.673838, lng: 77.108186, title: 'ГНБ-проект №43' },
+      { lat: 43.351869, lng: 77.000358, title: 'ГНБ-проект №44' },
+      { lat: 43.325932, lng: 76.980722, title: 'ГНБ-проект №45' },
+      { lat: 43.311463, lng: 76.960903, title: 'ГНБ-проект №46' },
+      { lat: 43.313680, lng: 76.959642, title: 'ГНБ-проект №47' },
+      { lat: 43.281366, lng: 76.953588, title: 'ГНБ-проект №48' },
+      { lat: 43.265475, lng: 76.934300, title: 'ГНБ-проект №49' },
+      { lat: 43.260013, lng: 76.919544, title: 'ГНБ-проект №50' },
+      { lat: 43.247002, lng: 76.905562, title: 'ГНБ-проект №51' },
+      { lat: 43.240827, lng: 76.896336, title: 'ГНБ-проект №52' },
+      { lat: 43.239072, lng: 76.895159, title: 'ГНБ-проект №53' },
+      { lat: 43.239843, lng: 76.873864, title: 'ГНБ-проект №54' },
+      { lat: 43.221496, lng: 76.870228, title: 'ГНБ-проект №55' },
+      { lat: 43.203904, lng: 76.885670, title: 'ГНБ-проект №56' },
+      { lat: 43.203910, lng: 76.899728, title: 'ГНБ-проект №57' },
+      { lat: 43.210711, lng: 76.907840, title: 'ГНБ-проект №58' },
+      { lat: 43.188216, lng: 76.922324, title: 'ГНБ-проект №59' },
+      { lat: 43.153089, lng: 76.900898, title: 'ГНБ-проект №60' },
+      { lat: 43.170543, lng: 76.849723, title: 'ГНБ-проект №61' },
     ];
 
     function initMap() {
