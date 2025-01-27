@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <!-- ВАЖНО: мета-тег для адаптивности -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Вакансии — ЭЛЕКТРОТЕХСНАБ</title>
+
+  <!-- Подключаем шрифт Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <style>
+    /* ===== СБРОС / БАЗОВЫЕ СТИЛИ ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      background: #f0f2f5;
+      color: #444; 
+      line-height: 1.6;
+    }
+
+    /* ===== ШАПКА / МЕНЮ ===== */
+    header {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      gap: 10px;
+    }
+    .navbar-logo img {
+      height: 40px;
+      width: auto;
+    }
+    .navbar-logo span {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0563bb;
+      letter-spacing: 0.3px;
+    }
+    .navbar-menu a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .navbar-menu a:hover {
+      color: #0563bb;
+    }
+
+    /* ===== HERO-СЕКЦИЯ (фон) ===== */
+    .hero {
+      width: 100%;
+      min-height: 320px;
+      background:
+        linear-gradient(
+          to right, 
+          rgba(5, 99, 187, 0.7), 
+          rgba(85, 149, 233, 0.7)
+        ),
+        url('https://i.imgur.com/iPhcz16.png') center/cover no-repeat; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 60px 20px;
+    }
+    .hero-content {
+      max-width: 800px;
+    }
+    .hero-content h1 {
+      font-size: 2.6rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+
+    /* ===== СЕКЦИЯ "Вакансии" ===== */
+    .section-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .section-container h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #0563bb;
+      margin-bottom: 30px;
+      position: relative;
+      letter-spacing: 0.3px;
+    }
+    .section-container h2::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 3px;
+      background: #0563bb;
+      margin: 15px auto 0 auto;
+      border-radius: 2px;
+    }
+
+    /* Сетка карточек вакансий */
+    .vacancies-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    @media (max-width: 768px) {
+      .vacancies-grid {
+        grid-template-columns: 1fr; /* на мобильном по одной */
+      }
+    }
+    .vacancy-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+    .vacancy-card:hover {
+      transform: translateY(-4px);
+    }
+    .vacancy-header {
+      margin-bottom: 15px;
+    }
+    .vacancy-header h3 {
+      color: #0563bb;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .vacancy-header p {
+      font-size: 0.95rem;
+      color: #777;
+    }
+    .vacancy-body {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      flex-grow: 1; 
+      margin-bottom: 15px;
+    }
+    .vacancy-body ul {
+      margin-top: 10px;
+      margin-left: 20px;
+      list-style: disc;
+    }
+    .vacancy-footer {
+      text-align: right;
+    }
+    .apply-btn {
+      background: #0563bb;
+      color: #fff;
+      padding: 12px 25px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .apply-btn:hover {
+      background: #ffdf00;
+      color: #333;
+    }
+
+    /* ===== ПОДВАЛ ===== */
+    footer {
+      text-align: center;
+      background: #0563bb;
+      color: #fff;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Шапка / Меню -->
+  <header>
+    <div class="navbar">
+      <a href="index.html" class="navbar-logo">
+        <!-- ССЫЛКА на основную страницу "index.html" -->
+        <img src="https://i.imgur.com/IYbGj0Y.png" alt="Логотип">
+        <span>ЭЛЕКТРОТЕХСНАБ</span>
+      </a>
+      <div class="navbar-menu">
+        <!-- Ссылки, ведущие на секции главного сайта: index.html#services, index.html#gallery, ... -->
+        <a href="index.html">Главная</a>
+        <a href="index.html#services">Услуги</a>
+        <a href="index.html#gallery">Галерея</a>
+        <a href="index.html#contacts">Контакты</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero / Заставка -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Вакансии</h1>
+      <p>
+        Мы всегда рады профессионалам, готовым развиваться вместе с нами. 
+        Ниже — список актуальных позиций, откликайтесь!
+      </p>
+    </div>
+  </section>
+
+  <!-- Секция: список вакансий -->
+  <section class="section-container">
+    <h2>Актуальные вакансии</h2>
+    
+    <div class="vacancies-grid">
+      <!-- 1 -->
+      <div class="vacancy-card">
+        <div class="vacancy-header">
+          <h3>Инженер ГНБ (с опытом)</h3>
+          <p>г. Алматы (полная занятость)</p>
+        </div>
+        <div class="vacancy-body">
+          <p>
+            Требуется специалист с навыками бестраншейной прокладки трубопроводов. 
+            Знание технологии ГНБ, умение читать рабочую документацию, 
+            организовывать процессы на объекте.
+          </p>
+          <ul>
+            <li>Техническое образование</li>
+            <li>Опыт работы от 3 лет</li>
+            <li>Уверенный пользователь AutoCAD</li>
+          </ul>
+        </div>
+        <div class="vacancy-footer">
+          <a 
+            href="https://wa.me/77777470986?text=Отклик+на+вакансию:+Инженер+ГНБ" 
+            class="apply-btn"
+            target="_blank"
+          >
+            Откликнуться
+          </a>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="vacancy-card">
+        <div class="vacancy-header">
+          <h3>Оператор буровой установки</h3>
+          <p>г. Алматы (вахтовый метод)</p>
+        </div>
+        <div class="vacancy-body">
+          <p>
+            Выполнение работ на установках горизонтального направленного бурения (Vermeer, XZ). 
+            Поддержание техники в рабочем состоянии, взаимодействие с механиками.
+          </p>
+          <ul>
+            <li>Опыт управления УГНБ от 2 лет</li>
+            <li>Водительская категория желательно</li>
+            <li>Ответственность</li>
+          </ul>
+        </div>
+        <div class="vacancy-footer">
+          <a 
+            href="https://wa.me/77777470986?text=Отклик+на+вакансию:+Оператор+буровой" 
+            class="apply-btn"
+            target="_blank"
+          >
+            Откликнуться
+          </a>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="vacancy-card">
+        <div class="vacancy-header">
+          <h3>Сварщик ПНД/металл</h3>
+          <p>г. Алматы (полная занятость)</p>
+        </div>
+        <div class="vacancy-body">
+          <p>
+            Сварка труб и металлоконструкций. Знание методов сварки ПНД (полимер) и металла, 
+            умение читать чертежи. Наличие действующих сертификатов — плюс.
+          </p>
+          <ul>
+            <li>Опыт от 2 лет</li>
+            <li>Сертификат сварщика ПНД приветствуется</li>
+          </ul>
+        </div>
+        <div class="vacancy-footer">
+          <a 
+            href="https://wa.me/77777470986?text=Отклик+на+вакансию:+Сварщик" 
+            class="apply-btn"
+            target="_blank"
+          >
+            Откликнуться
+          </a>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="vacancy-card">
+        <div class="vacancy-header">
+          <h3>Водитель-экскаваторщик</h3>
+          <p>г. Алматы (полная занятость)</p>
+        </div>
+        <div class="vacancy-body">
+          <p>
+            Управление экскаватором, обеспечение работ на строительных площадках, 
+            текущий контроль технического состояния техники.
+          </p>
+          <ul>
+            <li>Права категории AIII (тракторист-машинист)</li>
+            <li>Опыт работы от 1 года</li>
+            <li>Знание основ техобслуживания</li>
+          </ul>
+        </div>
+        <div class="vacancy-footer">
+          <a 
+            href="https://wa.me/77777470986?text=Отклик+на+вакансию:+Водитель-экскаваторщик" 
+            class="apply-btn"
+            target="_blank"
+          >
+            Откликнуться
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Подвал -->
+  <footer>
+    <p>&copy; 2024 ЭЛЕКТРОТЕХСНАБ. Все права защищены.</p>
+  </footer>
+
+</body>
+</html>
