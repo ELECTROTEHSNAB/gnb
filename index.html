@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <!-- ВАЖНО: мета-тег viewport для адаптивности -->
+  <!-- Важно: мета-тег viewport для адаптивности -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>ЭЛЕКТРОТЕХСНАБ — Горизонтальное направленное бурение (ГНБ)</title>
@@ -11,15 +11,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- (В вашем исходном коде была ссылка как rel="stylesheet", 
-       но это не критично; оставляем как есть.) -->
+  <!-- Здесь у вас, например, подключен фон как rel="stylesheet" -->
   <link 
-    href="https://i.imgur.com/Htid9yx.png" 
+    href="https://i.imgur.com/Htid9yx.png"
     rel="stylesheet"
   >
-  
+
   <style>
-    /* ======= СБРОС / БАЗОВЫЕ СТИЛИ ======= */
+    /* ========== СБРОС / БАЗОВЫЕ СТИЛИ ========== */
     * {
       margin: 0;
       padding: 0;
@@ -31,7 +30,7 @@
       background: #f0f2f5;
     }
 
-    /* ======= ШАПКА (фиксированное меню) ======= */
+    /* ========== ШАПКА (фиксированное меню) ========== */
     header {
       position: fixed;
       width: 100%;
@@ -81,15 +80,15 @@
       color: #0563bb;
     }
 
-    /* ======= ГЕРОЙ-СЕКЦИЯ (ДЕСКТОП ПО УМОЛЧАНИЮ) ======= */
+    /* ========== ГЕРОЙ (Hero) ========== */
     .hero {
       height: 100vh;
-      background: 
+      background:
         linear-gradient(
-          to right, 
-          rgba(5, 99, 187, 0.7) 0%, 
+          to right,
+          rgba(5, 99, 187, 0.7) 0%,
           rgba(85, 149, 233, 0.7) 100%
-        ), 
+        ),
         url('https://i.imgur.com/Htid9yx.png') center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -127,12 +126,12 @@
       color: #333;
     }
 
-    /* Отступ для подфиксированной шапки */
+    /* Отступ под фиксированную шапку */
     .offset-top {
       margin-top: 100px;
     }
 
-    /* ======= ОБЩИЙ КОНТЕЙНЕР СЕКЦИЙ ======= */
+    /* ========== ОБЩИЙ КОНТЕЙНЕР СЕКЦИЙ ========== */
     .section-container {
       max-width: 1200px;
       margin: 0 auto;
@@ -162,7 +161,7 @@
       line-height: 1.6;
     }
 
-    /* ======= УСЛУГИ (services) ======= */
+    /* ========== УСЛУГИ ========== */
     .services-list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -200,11 +199,11 @@
       margin-top: 15px;
       background: #0563bb;
       color: #fff;
-      padding: 16px 32px; /* Увеличили кнопку */
+      padding: 16px 32px;
       border-radius: 4px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem; /* Крупнее шрифт */
+      font-size: 1.1rem;
       transition: background 0.3s ease;
     }
     .service-btn:hover {
@@ -212,7 +211,7 @@
       color: #333;
     }
 
-    /* ======= КАЛЬКУЛЯТОР ======= */
+    /* ========== КАЛЬКУЛЯТОР ========== */
     .calculator-section {
       background: linear-gradient(to right, #e1f5fe, #ffffff);
       border-radius: 8px;
@@ -328,7 +327,7 @@
       color: #333;
     }
 
-    /* ======= ГАЛЕРЕЯ ======= */
+    /* ========== ГАЛЕРЕЯ ========== */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -382,7 +381,44 @@
       color: #333;
     }
 
-    /* ======= ТЕХНОЛОГИИ (2×2) ======= */
+    /* ========== СЕКЦИЯ «ВАКАНСИИ» (более заметная) ========== */
+    .vacancies-section {
+      background: #f9f3d7; /* светлый пастельный фон, чтобы выделять */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-radius: 8px;
+      text-align: center;
+      padding: 60px 20px; /* добавили простор */
+      margin-bottom: 60px; /* чтобы отделить от следующей секции */
+    }
+    .vacancies-section h2 {
+      font-size: 2.2rem; /* чуть больше заголовок */
+      margin-bottom: 20px;
+      color: #0563bb;
+      letter-spacing: 0.3px;
+    }
+    .vacancies-section p {
+      font-size: 1.1rem;
+      color: #555;
+      margin: 0 auto 30px auto;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+    .vacancies-section a.vacancies-btn {
+      background: #0563bb;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      font-size: 1.1rem;
+    }
+    .vacancies-section a.vacancies-btn:hover {
+      background: #ffdf00;
+      color: #333;
+    }
+
+    /* ========== ТЕХНОЛОГИИ (2×2) ========== */
     .tech-steps {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -417,7 +453,7 @@
       font-size: 0.95rem;
     }
 
-    /* ======= КОНТАКТЫ ======= */
+    /* ========== КОНТАКТЫ ========== */
     .contacts-section {
       display: flex;
       flex-wrap: wrap;
@@ -491,7 +527,7 @@
       color: #333;
     }
 
-    /* ======= ПОДВАЛ ======= */
+    /* ========== ПОДВАЛ ========== */
     footer {
       background: #0563bb;
       color: #fff;
@@ -499,18 +535,15 @@
       padding: 20px;
     }
 
-    /* 
-       ======= АДАПТИВНОСТЬ: ПОДМЕНЯЕМ ФОН НА МОБИЛЬНОМ ======= 
-       (max-width: 768px) => фон -> pCK8h7S.jpeg
-    */
+    /* ========== АДАПТИВНОСТЬ (фон на мобильных) ========== */
     @media (max-width: 768px) {
       .hero {
-        background: 
+        background:
           linear-gradient(
-            to right, 
-            rgba(5, 99, 187, 0.7) 0%, 
-            rgba(85, 149, 233, 0.7) 100%
-          ), 
+            to right,
+            rgba(5, 99, 187, 0.7),
+            rgba(85, 149, 233, 0.7)
+          ),
           url('https://i.imgur.com/pCK8h7S.jpeg') center/cover no-repeat;
       }
       .hero-content h1 {
@@ -525,18 +558,13 @@
       .tech-video iframe {
         height: 250px;
       }
-
-      /* 
-         ==== ИСПРАВЛЕНИЕ для кнопки в галерее 
-         чтобы текст не накладывался друг на друга ====
-      */
       .gallery-button {
         font-size: 1rem;
-        white-space: normal;     /* разрешаем перенос */
-        word-break: break-word;  /* если слово длинное, переносим */
-        display: inline-block;   /* сохраняем формат кнопки, но даём возможность переноса */
-        max-width: 90%;         /* чтобы не уходило за экран */
-        margin: 0 auto;         /* центрируем */
+        white-space: normal;
+        word-break: break-word;
+        display: inline-block;
+        max-width: 90%;
+        margin: 0 auto;
         text-align: center;
       }
     }
@@ -544,7 +572,7 @@
 </head>
 <body>
 
-  <!-- Шапка -->
+  <!-- Шапка (navbar) -->
   <header>
     <div class="navbar">
       <a href="#" class="navbar-logo">
@@ -571,7 +599,7 @@
     <div class="hero-content">
       <h1>Монтаж инженерных сетей бестраншейным способом</h1>
       <p>Мы более 20 лет внедряем передовые технологии ГНБ. Выполняем то, что другим не под силу!</p>
-      <!-- Кнопка — переход в WhatsApp с готовым текстом -->
+      <!-- Кнопка (WhatsApp) -->
       <div 
         class="hero-btn" 
         onclick="orderService()"
@@ -583,8 +611,8 @@
 
   <div class="offset-top"></div>
 
-  <!-- Услуги (6 карточек) -->
-  <section id="services" class="section-container">
+  <!-- Услуги -->
+    <section id="services" class="section-container">
     <h2>Услуги</h2>
     <div class="services-list">
       <!-- 1. ГНБ под ключ -->
@@ -644,37 +672,34 @@
     </div>
   </section>
 
-  <!-- Калькулятор цены -->
+  <!-- Калькулятор -->
   <section id="calculator" class="section-container">
     <h2>Калькулятор цены</h2>
     <div class="calculator-section">
       <div class="calculator-container">
-        <!-- Бокс с вводом длины -->
         <div class="calc-box">
           <h4>Длина бурения</h4>
           <label for="calcLength" class="calc-label">Общая длина (м):</label>
-          <input 
-            type="number" 
-            id="calcLength" 
-            class="calc-length-input" 
-            placeholder="Введите длину (м)" 
-            min="1" 
+          <input
+            type="number"
+            id="calcLength"
+            class="calc-length-input"
+            placeholder="Введите длину (м)"
+            min="1"
             value="100"
             oninput="calculatePrice()"
           >
         </div>
         
-        <!-- Бокс с выбором диаметра -->
         <div class="calc-box">
           <h4>Диаметр ПНД</h4>
           <label class="calc-label">Выберите диаметр трубы:</label>
           <div class="diameters-list" id="diametersList"></div>
         </div>
       </div>
-
       <div class="calc-result" id="calcResult">Итоговая цена: 0 тг</div>
-      <div 
-        class="calc-button" 
+      <div
+        class="calc-button"
         onclick="calculatePrice()"
       >
         Рассчитать
@@ -682,7 +707,7 @@
     </div>
   </section>
 
-  <!-- ГАЛЕРЕЯ -->
+  <!-- Галерея -->
   <section id="gallery" class="section-container">
     <h2>Галерея техники</h2>
     <p>
@@ -760,22 +785,35 @@
     </div>
   </section>
 
-  <!-- ТЕХНОЛОГИИ (2×2) -->
+  <!-- БОЛЕЕ ЗАМЕТНАЯ СЕКЦИЯ «ВАКАНСИИ» -->
+  <section id="vacancies" class="section-container vacancies-section">
+    <h2>Вакансии</h2>
+    <p>
+      Мы ищем сотрудников, готовых развиваться вместе с нами. 
+      Здесь вы можете посмотреть, какие вакансии свободны на данный момент.
+    </p>
+    <!-- Ссылка на другой файл (vacancies.html) -->
+    <a href="vacancies.html" class="vacancies-btn">
+      Посмотреть вакансии
+    </a>
+  </section>
+
+  <!-- Технологии (2×2) -->
   <section id="technologies" class="section-container">
     <h2>Технологии — как работает ГНБ</h2>
     <div class="tech-steps">
       <div class="tech-step">
         <h3>1. Пилотное бурение</h3>
         <p>
-          Специальная буровая головка с локатором прокладывает пилотную скважину
-          строго по заданной траектории, обходя существующие коммуникации.
+          Специальная буровая головка с локатором прокладывает пилотную скважину 
+          по заданной траектории, обходя коммуникации.
         </p>
       </div>
       <div class="tech-step">
         <h3>2. Расширение</h3>
         <p>
-          При необходимости заложить крупный диаметр: производим постепенное расширение 
-          скважины до нужного размера.
+          При необходимости заложить крупный диаметр: 
+          поэтапное расширение скважины до нужного размера.
         </p>
       </div>
       <div class="tech-step">
@@ -795,7 +833,7 @@
     </div>
   </section>
 
-  <!-- КАРТА ВЫПОЛНЕННЫХ РАБОТ -->
+  <!-- Карта выполненных работ -->
   <section id="map" class="section-container">
     <h2>Карта выполненных работ</h2>
     <p>Ниже отмечены наши объекты (более 1000) по всему Казахстану.</p>
@@ -823,35 +861,39 @@
             class="map"
             src="https://www.google.com/maps?q=43.2769332,76.9220102&z=17&output=embed"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
 
-      <!-- Форма, при отправке – переходим в WhatsApp -->
-      <form class="contact-form" id="whatsappForm" onsubmit="sendToWhatsApp(event)">
+      <!-- Форма, при отправке – в WhatsApp -->
+      <form
+        class="contact-form"
+        id="whatsappForm"
+        onsubmit="sendToWhatsApp(event)"
+      >
         <h3>Оставьте заявку</h3>
-        <input 
-          type="text" 
-          id="nameField" 
-          name="name" 
-          placeholder="Ваше имя" 
-          required 
-        />
-        <input 
-          type="tel" 
-          id="phoneField" 
-          name="phone" 
-          placeholder="Телефон" 
-          required 
-        />
-        <textarea 
-          id="messageField" 
-          name="message" 
-          rows="4" 
-          placeholder="Сообщение" 
-          required>
-        </textarea>
+        <input
+          type="text"
+          id="nameField"
+          name="name"
+          placeholder="Ваше имя"
+          required
+        >
+        <input
+          type="tel"
+          id="phoneField"
+          name="phone"
+          placeholder="Телефон"
+          required
+        >
+        <textarea
+          id="messageField"
+          name="message"
+          rows="4"
+          placeholder="Сообщение"
+          required
+        ></textarea>
         <button type="submit">Отправить</button>
       </form>
     </div>
@@ -874,8 +916,6 @@
 
   <!-- JS: Переадресация формы в WhatsApp -->
   <script>
-    const whatsappNumber = '77777470986';
-
     function sendToWhatsApp(event) {
       event.preventDefault();
       const name = document.getElementById('nameField').value.trim();
@@ -883,7 +923,7 @@
       const message = document.getElementById('messageField').value.trim();
 
       const text = `Имя: ${name}%0AТелефон: ${phone}%0AСообщение: ${message}`;
-      const whatsappLink = `https://wa.me/${whatsappNumber}?text=${text}`;
+      const whatsappLink = `https://wa.me/77777470986?text=${text}`;
       window.open(whatsappLink, '_blank');
     }
   </script>
@@ -959,11 +999,11 @@
 
   <!-- JS: Google Maps -->
   <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtejkm2hJwzGsNt_lA3v0K3gP54a74n4Y&callback=initMap">
-  </script>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtejkm2hJwzGsNt_lA3v0K3gP54a74n4Y&callback=initMap"
+  ></script>
   <script>
     const projectMarkers = [
-      { lat: 43.317395, lng: 76.970348, title: 'ГНБ-проект №1' },
+     { lat: 43.317395, lng: 76.970348, title: 'ГНБ-проект №1' },
       { lat: 43.265969, lng: 76.885835, title: 'ГНБ-проект №2' },
       { lat: 43.292400, lng: 76.855930, title: 'ГНБ-проект №3' },
       { lat: 43.294099, lng: 76.860125, title: 'ГНБ-проект №4' },
@@ -1032,7 +1072,7 @@
         zoom: 10,
         center: mapCenter,
       });
-      projectMarkers.forEach((obj) => {
+      projectMarkers.forEach(obj => {
         new google.maps.Marker({
           position: { lat: obj.lat, lng: obj.lng },
           map: map,
